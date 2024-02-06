@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Comp Sound HW1</title>
+        <style>
+            div {
+                border: 2px solid black;
+                float: center; 
+                /* width: 50% */
+                margin: auto;
+                width: 50%;
+                /* border: 3px solid green; */
+            }
+            
+            span{display: flex;
+                justify-content:space-between;
+            }
+        </style>
+    </head>
+    <body>
+        <span>
+            <div style="border: white">
+        <div id="waveform" style="background-color:rgb(255, 171, 152);">
+            <h3>Waveform</h3>
+            <input type="radio" name="waveform" value="sine" checked="True">
+            <label>Sine</label>
+            <input type="radio" name="waveform" value="sawtooth">
+            <label>Sawtooth</label>
+        </div>
+        
+        <br>
+        <div id="AS" style="background-color:rgb(147, 249, 210);">
+            <h3>Additive Synthesis</h3>
+        <h4>Number of Oscillators/Partials</h4>
+        <input type="range" name="numOsc" min=1 max=5 value = 3></input>
+        <button>Play</button>
+        </div>
+        <br>
+        <div id="AM" style="background-color:rgb(147, 249, 210);">
+        <h3><input type="checkbox" name="AM" >Amplitude Modulation</h3>
+        <h4>Control modulator frequency</h4>
+        <input type="range" min=1 max=1000 name="amModFreq"></input>
+        </div>
+        <br>
+
+        <div id="FM" style="background-color:rgb(147, 249, 210);">
+        <h3><input type="checkbox" name="FM">Frequency Modulation</h3>
+        <h4>Control modulator frequency</h4>
+        <input type="range" min=1 max=1000 name="fmModFreq"></input>
+        <h4>Control index of modulation</h4>
+        <input type="range" min=1 max=1000 name="fmModIdx"></input>
+        </div>
+        <br>
+        <div id="LFO" style="background-color:rgb(176, 200, 250);">
+        <h3>Add LFO</h3>
+        <input type="checkbox" name="lfoAS" >
+        <label>Additive Synthesis</label>
+        <input type="checkbox" name="lfoAM" value="AM">
+        <label>AM Synthesis</label>
+        <input type="checkbox" name="lfoFM" value="FM">
+        <label>FM Synthesis</label>
+        </div>
+    </div>
+        <div id="directions" style="background-color:azure; border:dashed;">
+            <h3>Directions</h3>
+            <p>Waveform: Choose a waveform for your oscillators</p>
+            <p>Additive Synthesis: Set the number of partials by moving the slider. Click "Play" to hear the sound</p>
+            <p>AM/FM: Check the boxes next to each title to turn the mode on. You can have multiple modes on. Press your keyboard to hear sounds.</p>
+            <p>Add LFO: You can choose to add LFOs to each of the synthesis methods by clicking the boxes next to each method. (*Note: For Additive synthesis, LFO is added only to the first oscillator)</p>
+        </div>
+    </span>
+    </body>
+    <script src="./main.js"></script>
+</html>
